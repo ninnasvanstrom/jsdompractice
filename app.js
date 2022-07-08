@@ -1,18 +1,30 @@
-// select modal-btn,modal-overlay,close-btn
-const modalBtn = document.querySelector('.modal-btn');
-const modalOverlay = document.querySelector('.modal-overlay');
-const closeBtn = document.querySelector('.close-btn');
+//using selectors inside the element
 
+const questions = document.querySelectorAll('.question');
 
-// listen for click events on modal-btn and close-btn
-// when user clicks modal-btn add .open-modal to modal-overlay
-modalBtn.addEventListener('click', function () {
-   modalOverlay.classList.add('open-modal');
+questions.forEach(function (question) {
+    const btn = question.querySelector('.question-btn');
+    btn.addEventListener('click', function () {
+
+        questions.forEach(function (item) {
+            if (item !== question) {
+                item.classList.remove('show-text');
+            }
+        });
+
+        question.classList.toggle('show-text');
+    });
 });
 
-closeBtn.addEventListener('click', function () {
-    modalOverlay.classList.remove('open-modal');
-})
+// // traversing the dom
 
+// //selecting buttons
+// const btns = document.querySelectorAll('.question-btn');
 
-// when user clicks close-btn remove .open-modal from modal-overlay
+// //add toggle to every button
+// btns.forEach(function(btn) {
+//     btn.addEventListener('click', function (e) {
+//         const question = e.currentTarget.parentElement.parentElement; 
+//         question.classList.toggle('show-text');
+//     });
+// });
