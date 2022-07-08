@@ -1,30 +1,18 @@
-//using selectors inside the element
+// select modal-btn,modal-overlay,close-btn
+const modalBtn = document.querySelector('.modal-btn');
+const modalOverlay = document.querySelector('.modal-overlay');
+const closeBtn = document.querySelector('.close-btn');
 
-const questions = document.querySelectorAll('.question');
 
-questions.forEach(function (question) {
-    const btn = question.querySelector('.question-btn');
-    btn.addEventListener('click', function () {
-
-        questions.forEach(function (item) {
-            if (item !== question) {
-                item.classList.remove('show-text');
-            }
-        });
-
-        question.classList.toggle('show-text');
-    });
+// listen for click events on modal-btn and close-btn
+// when user clicks modal-btn add .open-modal to modal-overlay
+modalBtn.addEventListener('click', function () {
+   modalOverlay.classList.add('open-modal');
 });
 
-// // traversing the dom
+closeBtn.addEventListener('click', function () {
+    modalOverlay.classList.remove('open-modal');
+})
 
-// //selecting buttons
-// const btns = document.querySelectorAll('.question-btn');
 
-// //add toggle to every button
-// btns.forEach(function(btn) {
-//     btn.addEventListener('click', function (e) {
-//         const question = e.currentTarget.parentElement.parentElement; 
-//         question.classList.toggle('show-text');
-//     });
-// });
+// when user clicks close-btn remove .open-modal from modal-overlay
