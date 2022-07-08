@@ -23,10 +23,7 @@ const btns = document.querySelectorAll('.btn');
 
 
 
- //Simple way: 
- //Based on these HTML and CSS sheets, the buttons 
- //won't be styled in CSS this way though but code works and it could be styled 
- //with the right class names in HTML and CSS
+
 
  /*
 const btnDecrease = document.querySelector('.btn-decrease');
